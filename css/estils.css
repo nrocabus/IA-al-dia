@@ -1,5 +1,4 @@
 
-
 /*   PER CONFIGURAR L'ESTIL DE LA PÀGINA ES SEGUIRÀ EL CRITERI DE MOBIL FIRST I TINDRÀ LA SEGÜENT ESTRUCTURA:
         1. CONFIGURACIÓ BÀSICA HTML, BODY I RESET DE PROPIETATS PER DEFECTE QUE NO ENS INTERESSEN
         2. CONFIGURACIÓ DELS ELEMENTS COMUNS A TOTES LES PÀGINES
@@ -13,7 +12,12 @@
             4.2 ESTILS MODIFICATS PER ORDINADOR 
 */
 
-/*   1. CONFIGURACIÓ BÀSICA HTML, BODY I RESET DE PROPIETATS PER DEFECTE QUE NO ENS INTERESSEN   */
+/*   1. CONFIGURACIÓ BÀSICA HTML, BODY I RESET DE PROPIETATS PER DEFECTE QUE NO ENS INTERESSEN 
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+*/
 
 html, body{
     margin: 0;
@@ -48,14 +52,24 @@ ul{
     padding-inline-start: 0;
 }
 
+img,
+video {
+  max-width: 100%;
+}
 
-/*   2. ESTIL DELS ELEMENTS COMUNS A TOTES LES PÀGINES   */
 
+
+/*   2. ESTIL DELS ELEMENTS COMUNS A TOTES LES PÀGINES   
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+*/
 
 
 header{
     text-align: center;
-    box-shadow: 0px 1px 8px 0px #f1f1f1;}
+}
 
 header p{
     font-size: 3rem;
@@ -68,28 +82,29 @@ header p span{
     font-weight: 700;
     letter-spacing: 0;
 }
-nav{
+
+nav.menu-principal{
     background-color: white;
     text-align: center;
     position: sticky;
     top: 0;
     font-weight: bold;
+    box-shadow: 0px 5px 8px 0px #f1f1f1;
 }
+
 nav a{
     color: black;
 }
-nav ul, footer>ul{
 
+nav.menu-principal ul, footer>ul{
     display: flex;
     font-size: .85rem;
     flex-direction: column;
-
 }
 
 nav ul a:hover{
     color: rgba(0, 0, 0, .5);
 }
-
 
 footer ul a:hover{
     color: rgb(222,35,51);
@@ -113,8 +128,6 @@ a[aria-current="page"], span[aria-current="page"]{
     color: rgb(222,35,51);
 }
 
-
-
 main{
     width: 90%;
     padding-top: 1rem;
@@ -122,7 +135,12 @@ main{
     margin-left: auto;
     margin-right: auto;
 }
-
+/* 
+.mod-main-aplicacions{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+} */
 
 footer{
     text-align: center;
@@ -135,31 +153,34 @@ footer a{
     color: white;
 }
 
-
-header nav ul, footer>ul{
-    flex-direction: column;
-}    
-
 .menu-xarxes ul{
     justify-content: center;
 }
 
-.menu-actualitat ul{
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+h2{
+    text-align:center;
+    font-size:1.8rem;
 }
+
+
+
+/* 3. CONFIGURACIÓ DELS ELEMENTS PROPIS DE CADA PÀGINA
+        3.1 INDEX.HTML 
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+
+        */
 
 .cover{
     background-image: url(../img/bg-hero-home.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    z-index: 1;
 }
 
-.cover h1{
+h1{
     color: white;
     width: 80%;
     margin-left: auto;
@@ -171,23 +192,21 @@ header nav ul, footer>ul{
     padding-bottom: 4rem;
 }
 
-h2{
-    text-align:center;
-    font-size:1.8rem;
+.intro p{
+    font-size: 0.9rem;
 }
 
-/* .intro{
-    width: 80%;
+.menu-actualitat ul{
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
-} */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 
 .menu-actualitat h3{
     font-size: 1.3rem;
-}
-
-.intro p{
-    font-size: 0.9rem;
 }
 
 .menu-actualitat a{
@@ -200,12 +219,12 @@ h2{
 }
 
 .menu-actualitat ul{
-
     display: flex;
     gap: 1rem;
 }
+
 .menu-actualitat ul li{
-    flex: 1 1 0px;
+    flex: 1 1 0px;      /*Per tal que mantinguin les mateixes proporcions independentment del contingut*/
 }
 
 .menu-actualitat div{
@@ -222,47 +241,67 @@ h2{
     font-size: .85rem;
 }
 
-.menu-actualitat .llegir-mes{
-    font-size: 0.75rem;
+.llegir-mes{
+    font-size: 0.75rem !important;
+    font-weight: bold;
 }
 
-.mod-main-aplicacions{
-    width: 100%;
-}
+
+
+
+/* 3. CONFIGURACIÓ DELS ELEMENTS PROPIS DE CADA PÀGINA
+        3.2 APLICACIONS.HTML 
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+*/
 
 .menu-aplicacions ul{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 18rem);
+    justify-content: center;
+    grid-gap: 2rem;
 }
 
-
 .menu-aplicacions div{
-    width: 20rem;
-    height: 20rem;
+    aspect-ratio: 1/1;
     background-color: rgb(244, 246, 247);
-    padding: 1rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.menu-videos{
-
+.menu-aplicacions p{
+    
+    margin-block-start: 0em;
+    margin-block-end: 0em;
 }
 
+.menu-aplicacions h3{
+    font-size: 1.5rem;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+/* 3. CONFIGURACIÓ DELS ELEMENTS PROPIS DE CADA PÀGINA
+        3.3 AL-CINEMA.HTML 
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+*/
+
 .menu-videos ul{
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 1rem;
+
 }
 
-.menu-videos li{
-    width: 49%;
-}
 
 .menu-videos figure{
     margin-block-start: 0;
@@ -271,18 +310,33 @@ h2{
     margin-inline-end: 0;
 }
 
+.menu-videos figure figcaption{
+    padding: .5rem 1rem 1rem 1rem;
+}
+
 .menu-videos iframe{
     width: 100%;
     aspect-ratio: 16/9;
 }
 
+.menu-videos cite{
+    font-weight: bold;
+    font-style: italic;
+}
 
+/* 3. CONFIGURACIÓ DELS ELEMENTS PROPIS DE CADA PÀGINA
+        3.4 DESPACHO-42.HTML 
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+*/
 
 
 .breadcrumb {
-    margin-left: 15%;
+    margin-left: 5%;
     margin-top: 1rem;
-    padding: 0 .5rem;
+    font-size: .8rem;
 }
 .breadcrumb ul {
     display: flex;
@@ -298,11 +352,8 @@ h2{
 }
 
 .noticies{
-    display: grid;
-    grid-template-columns: 1fr .5fr;
-    grid-template-rows: 1fr;
-    grid-gap: 3rem;
-
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .noticies h2{
@@ -310,11 +361,29 @@ h2{
     font-size: 2rem;
 }
 
+.noticies figure{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+.noticies figcaption{
+    font-size: .6rem;
+}
+
+article>p:last-of-type{
+    font-weight: 700;
+    font-style: italic;
+    font-size: .9rem;
+}
+
 .info-card{
     background: rgb(244, 246, 247);
     display: grid;
-    grid-template-columns: 0.1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 0.1fr 1fr;
+    grid-template-columns: 1fr;
+    justify-items: start;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
@@ -328,6 +397,10 @@ h2{
     margin-right: auto;
 }
 
+.info-card li{
+    font-size: 0.8rem;
+}
+
 
 form span{
     display:flex;
@@ -337,35 +410,88 @@ form span{
 input[type="submit"]{
     display: block;
     color: white;
-    font-size: 1.1rem;
-    background-color: #942c0b;
+    font-size: .7rem;
+    background-color: #de2333;
     border: none;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     margin-top: 2rem;
 }
 
 
-input[type="text"], input[type="email"], textarea{
+form p{
+    font-size: .7rem;
+}
+
+form li:not(:first-child){
+    margin-top: 1rem;
+}
+
+input[type="text"], input[type="email"]{
+    width: 100%;
+    height: 3rem;
+    border: 0;
+    background-color: rgb(244, 246, 247);
+}
+
+textarea{
     width: 100%;
     border: 0;
     background-color: rgb(244, 246, 247);
 }
 
+.altres-articles h2{
+    margin-block-start: 0;
+}
 
+.art-recents img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
 
+.art-recents{
+    display: flex;
+    padding-top: .5rem; 
+    padding-bottom: .5rem; 
+    border-bottom: dotted 2px #d1d1d1;
+}
+
+.art-recents p{
+    font-size: 0.8rem;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.art-recents h4{
+    font-size: 0.8rem;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+/* 4. CONFIGURACIÓ DEL DISSENY RESPONSIU 
+        4.1 ESTILS MODIFICATS PER TABLET
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+*/
 
 
     @media screen and (min-width: 30rem) and (max-width: 48rem) {
+
         header, footer{
-            padding-left:0;
             text-align: center;
         }
-        header nav ul, footer>ul{
-            flex-direction: column;
-        }    
+          
+        footer>ul li:not(:last-child):after {
+            margin-right: 0;
+            margin-left: 0;
+            content: '';    
+        }
 
         .cover h1{
             width: 60%;
@@ -373,23 +499,7 @@ input[type="text"], input[type="email"], textarea{
             padding-top: 4rem;
             padding-bottom: 4rem;
         }
-        
-        .menu-xarxes ul{
-            justify-content: center;
-        }
-        .menu-actualitat ul{
-            display: flex;
-            gap: 1rem;
-        }
-    
-        
-    footer>ul li:not(:last-child):after {
-        margin-right: 0;
-        margin-left: 0;
-        content: '';
-        }
- 
-        
+
         .menu-actualitat ul{
             width: 100%;
             display: flex;
@@ -397,34 +507,56 @@ input[type="text"], input[type="email"], textarea{
             gap: 1rem;
         }
 
-        .menu-aplicacions{
-            width: 50rem;
+        .info-card{   
+            grid-template-columns: 0.1fr 1fr;
+            grid-template-rows: 1fr;
+            justify-items: start;
+            gap:1rem;
+        }
+
+        .altres-articles{
+            width: 70%;
             margin-left: auto;
             margin-right: auto;
         }
-        
-        .menu-aplicacions ul{
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-/*         
-        
-        .menu-aplicacions li{
-            flex: 1 1 calc(33.33% - 2rem);
-        } */
     }
 
 
-/* Disseny responsiu per escriptori */
+/* 4. CONFIGURACIÓ DEL DISSENY RESPONSIU 
+        4.2 ESTILS MODIFICATS PER ESCRIPTORI
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+*/
+
 
 @media screen and (min-width: 48rem){   
-        main{
-            width: 70%;
-        }
 
         header, footer{
             padding-left: 15%;
             text-align:left;
+        }
+
+
+        nav.menu-principal{
+            padding-left: 15%;
+            text-align: left;
+        }
+
+        nav.menu-principal ul, footer>ul{
+            flex-direction: row;
+        }
+
+        nav ul li:not(:first-child){
+            margin-left: .8rem;
+        }
+
+        footer>ul li:not(:last-child):after {
+            margin-right: .5rem;
+            margin-left: .5rem;
+            content: ' · ';
+            color: white;
         }
 
         .cover h1{
@@ -442,28 +574,6 @@ input[type="text"], input[type="email"], textarea{
             margin-right: auto;
         }
 
-        footer>ul li:not(:last-child):after {
-            margin-right: .5rem;
-            margin-left: .5rem;
-            content: ' · ';
-            color: white;
-        }
-        nav{
-            padding-left: 15%;
-            text-align: left;
-        }
-        nav ul, footer>ul{
-            flex-direction: row;
-        }
-
-        nav ul li:not(:first-child){
-            margin-left: .8rem;
-        }
-
-        .menu-xarxes ul{
-            justify-content: left;
-        }
-
         .menu-actualitat ul{
             width: 100%;
             display: flex;
@@ -471,58 +581,31 @@ input[type="text"], input[type="email"], textarea{
             gap: 1rem;
         }
 
-        .menu-aplicacions{
-            width: 70rem;
-            margin-left: auto;
-            margin-right: auto;
+        .menu-xarxes ul{
+            justify-content: left;
         }
-        
-        .menu-aplicacions ul{
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-        
-/*         
-        .menu-aplicacions li{
-            flex: 1 1 calc(33.33% - 2rem);
-        } */
 
+        
+        .menu-videos li{
+            width: 45%;
+        } 
+
+        .noticies{
+            display: grid;
+            grid-template-columns: 1fr .5fr;
+            grid-template-rows: 1fr;
+            grid-gap: 3rem;
+        }
+
+        .info-card{   
+            grid-template-columns: 0.1fr 1fr;
+            grid-template-rows: 1fr;
+            justify-items: start;
+            gap:1rem;
+        }
     }
 
 
 
-.art-recents img{
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50%;
-    margin-right: 1rem;
-}
 
-.art-recents{
-    display: flex;
-    padding-top: .5rem; 
-    padding-bottom: .5rem; 
-    border-bottom: solid 2px #d1d1d1;
-}
-
-.art-recents p{
-    margin-block-start: 0;
-    margin-block-end: 0;
-}
-
-.art-recents h4{
-    margin-block-start: 0;
-    margin-block-end: 0;
-}
-
-
-
-
-
-
-img,
-picture,
-video {
-  max-width: 100%;
-}
 
