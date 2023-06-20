@@ -92,7 +92,7 @@ nav ul li:not(:last-child) {
         margin-bottom: .2rem;  
 }
 
-nav ul a:hover{
+nav ul a:hover, header p a:hover{
     color: rgba(0, 0, 0, .5);
 }
 
