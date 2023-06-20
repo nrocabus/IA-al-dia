@@ -19,7 +19,8 @@
 body{
     margin: 0;
     font-family: 'Source Sans 3', sans-serif;
-    font-size: 16px;  display:flex;
+    font-size: 16px;  
+    display:flex;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -99,8 +100,6 @@ nav ul a:hover, header p a:hover{
 footer ul a:hover{
     color: rgb(222,35,51);
 }
-
-
 
 a[aria-current="page"], span[aria-current="page"]{
     color: rgb(222,35,51);
@@ -241,6 +240,10 @@ p.llegir-mes{
 .menu-aplicacions p{
     margin-block-start: 0em;
     margin-block-end: 0em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    overflow: hidden;
 }
 
 
@@ -422,7 +425,7 @@ input[type="submit"]{
 */
 
 
-    @media screen and (min-width: 30rem) and (max-width: 48rem) {
+    @media screen and (min-width: 36rem) and (max-width: 48rem) {
   
         .cover h1{
             width: 60%;
